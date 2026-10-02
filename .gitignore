@@ -1,0 +1,8 @@
+# Local review / audit artifacts
+template-review-bundle.txt
+
+# Common local OS/editor artifacts
+.DS_Store
+*.swp
+*.swo
+*~

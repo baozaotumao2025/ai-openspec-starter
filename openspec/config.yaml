@@ -1,0 +1,54 @@
+schema: spec-driven
+
+context: |
+  When this project context is supplied by OpenSpec or explicitly loaded by a workflow:
+  1. Read docs/rules/global.md and follow it as the project-wide development policy.
+  2. Read docs/context/index.yaml.
+  3. Select only the project context relevant to the current change.
+  4. Read those context files before making assumptions.
+  5. Do not load all project context by default.
+
+  Context routing rules:
+  - Do not assume that the project has any external dependency or integration.
+  - When the current work depends on a component outside the project boundary,
+    read and follow docs/rules/external-dependency.md.
+  - Then inspect docs/context/index.yaml and load only the project-specific
+    context explicitly registered there that is relevant to the current change.
+  - If no relevant project context is registered, do not invent dependency
+    details such as version, location, configuration, behavior, or permissions.
+  - Perform only the targeted investigation required by the current change.
+  - Keep investigation results inside the current change unless they are
+    deliberately promoted into a project-specific context registered in
+    docs/context/index.yaml.
+
+  UI and brand routing rules:
+  - When the current work involves UI, frontend visual design, branding,
+    Logo usage, Design Tokens, Theme, Skin, white-label behavior, or
+    project-wide visual consistency, read and follow
+    docs/rules/ui-frontend.md.
+  - Then inspect docs/context/index.yaml and load only the project-specific
+    brand, visual, or UI context relevant to the current change.
+  - If no such project context is registered, do not invent brand names,
+    colors, fonts, Logo forms, visual styles, or Theme behavior.
+
+  Workflow-specific rules:
+  - When operating in Explore mode, read and follow docs/rules/explore.md.
+  - Do not load docs/rules/explore.md outside Explore unless explicitly needed.
+
+rules:
+  proposal:
+    - Read and follow docs/rules/proposal.md.
+  specs:
+    - Read and follow docs/rules/specs.md.
+  design:
+    - Read and follow docs/rules/design.md.
+  tasks:
+    - Read and follow docs/rules/tasks.md.
+
+operations:
+  apply:
+    guidance:
+      - When implementing tasks, read and follow docs/rules/apply.md.
+  archive:
+    guidance:
+      - Read and follow docs/rules/archive.md before archiving a change.
