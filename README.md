@@ -67,6 +67,22 @@ docs/context/index.yaml
 
 # 5 分钟快速开始
 
+先取得本 Starter 仓库，然后根据目标项目选择一种方式。下面假设 Starter 位于 `/path/to/ai-openspec-starter`。
+
+**接入已有 Git 仓库：**
+
+```bash
+/path/to/ai-openspec-starter/scripts/init.sh /path/to/existing-project
+```
+
+**从空目录创建新项目：**
+
+```bash
+/path/to/ai-openspec-starter/scripts/init.sh --new /path/to/new-project
+```
+
+第二种方式要求目标路径尚不存在。两种方式都会安装 Starter 并运行健康检查；已有仓库中的同名文件如果冲突，安装会停止。完成后先在 `docs/context/` 登记已确认的项目事实，再开始第一个 Change。更多说明见 [安装指南](docs/ai-openspec/installation.md)。
+
 ## 1. 环境要求
 
 建议准备：
@@ -121,7 +137,7 @@ openspec --version
 ```bash
 cd /path/to/ai-openspec-starter
 
-./scripts/install.sh /path/to/my-project
+./scripts/init.sh /path/to/my-project
 ```
 
 安装脚本当前会：
@@ -136,7 +152,7 @@ cd /path/to/ai-openspec-starter
 - 当 `docs/context/index.yaml` 不存在时初始化它；
 - 不把 `docs/context/index.yaml` 纳入 Starter Manifest。
 
-安装完成后：
+安装完成后（`init.sh` 已自动运行一次诊断）：
 
 ```bash
 cd /path/to/my-project
@@ -978,6 +994,7 @@ ai-openspec-starter/
 │
 └── scripts/
     ├── install.sh
+    ├── init.sh
     ├── upgrade.sh
     ├── uninstall.sh
     ├── doctor.sh

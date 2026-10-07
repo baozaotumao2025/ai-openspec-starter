@@ -1,6 +1,6 @@
 # AI OpenSpec Starter 安装与部署指南
 
-本文档说明如何把 AI OpenSpec Starter 安装到一个已有 Git 项目中。
+本文档说明如何把 AI OpenSpec Starter 接入已有 Git 项目，或从空目录初始化新项目。
 
 目标是做到：
 
@@ -75,7 +75,21 @@ Starter 和目标项目可以完全分离。
 cd /path/to/ai-openspec-starter
 ```
 
-运行：
+已有 Git 仓库（传入仓库根目录）：
+
+```bash
+./scripts/init.sh /path/to/my-project
+```
+
+创建新项目（目标路径必须尚不存在）：
+
+```bash
+./scripts/init.sh --new /path/to/new-project
+```
+
+`init.sh` 会调用安装器并运行 `doctor.sh`；新项目模式还会创建目录并执行 `git init`。健康检查失败时，已安装的文件会保留，便于根据诊断修复环境。
+
+如果只想安装文件、不运行健康检查，可以直接运行底层安装器：
 
 ```bash
 ./scripts/install.sh /path/to/my-project

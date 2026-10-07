@@ -99,6 +99,7 @@ MANAGED_ROOTS=(
   "openspec/changes/archive/.gitkeep"
   "openspec/specs/.gitkeep"
   "scripts/install.sh"
+  "scripts/init.sh"
   "scripts/upgrade.sh"
   "scripts/uninstall.sh"
   "scripts/doctor.sh"

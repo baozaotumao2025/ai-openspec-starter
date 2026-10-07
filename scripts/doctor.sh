@@ -345,6 +345,7 @@ section "Starter scripts"
 
 SCRIPT_FILES=(
   "scripts/install.sh"
+  "scripts/init.sh"
   "scripts/upgrade.sh"
   "scripts/uninstall.sh"
   "scripts/doctor.sh"
